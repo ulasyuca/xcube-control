@@ -1,0 +1,28 @@
+body{
+    overflow: hidden;
+    background: black;
+    margin: 0;
+}
+video{
+    height: 99.5%;
+    width: 99.5%;
+    //object-fit: fill;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border: 2px solid yellow;
+}
+.check1{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.check2{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}

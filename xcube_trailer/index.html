@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XCUBE Trailer</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<button onclick="checkPressed()" class="check1">test</button>
+<button onclick="checkPressed2()" class="check2">test</button>
+<video id="trailer" autoplay>
+    <source src="video/trailer.mp4" type="video/mp4">
+</video>
+<script type="text/javascript">
+    var vid = document.getElementById("trailer");
+    var pressedTimes = 0;
+    vid.onended = function () {
+       window.location = "../xcube/xcube-control.html?#";
+    };
+    function checkPressed() {
+        console.log(pressedTimes);
+        if (pressedTimes === 0){
+            setTimeout(function () {
+                pressedTimes = 0;
+            },4500);
+        }
+        if (pressedTimes < 3){
+            pressedTimes += 1;
+        }
+    }
+    function checkPressed2(){
+        if (pressedTimes >= 3) {
+            pressedTimes += 1;
+            console.log(pressedTimes);
+        }
+        if (pressedTimes === 6) window.location = "../xcube/src/xcube-control.html";
+    }
+    document.body.addEventListener('click', function () {
+        enableAutoplay();
+    });
+    function enableAutoplay() {
+        vid.play();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+body{
+    font-family: "Comic Sans MS";
+    font-weight: 900;
+    background-color: rgba(128,128,128,.15);
+    overflow: overlay;
+}
+h1{
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white!important;
+    text-shadow: 4px 4px black;
+}
+#lock {
+    color: red;
+    float: left;
+    font-size: 100px;
+}
+#lock2 {
+    color: red;
+    float: right;
+    font-size: 100px;
+}
+#lock3{
+    color: red;
+    font-size: 100px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+.container{
+    margin-top: 50px;
+    background-color: rgba(0,0,0,0.6);
+    border: none;
+    border-radius: 2vh;
+    width: 50%;
+    padding-top: 10vh;
+}
+.check_delete{
+    background-color: gray;
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: solid black 3px;
+    border-radius: 2vh;
+    text-align: center;
+}
+.red:hover{
+    color: red;
+}
+.red{
+    margin-left: 5%;
+}
+.contents{
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+}
+.naam{
+    background-color: rgba(128,128,128,0.2);
+    border-radius: 5px;
+    border: none;
+    padding: 1vh;
+}
+.inputValue{
+    opacity: 0;
+}
+#trailer{
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+.email{
+    background-color: rgba(128,128,128,0.2);
+    border-radius: 5px;
+    border: none;
+    padding: 1vh;
+}
+.form1{
+    border: 2px black solid;
+    border-radius: 2vh;
+    width: 50%;
+    background-color: rgba(0, 0, 0, .8);
+}
+.output{
+    text-align: left;
+}
+.noodDicht:hover{
+    color: red;
+}
+.send{
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 1.5vh!important;
+    font-family: "Comic Sans MS";
+    font-size: 2.6vh;
+    margin-bottom: 1vh;
+}.send:hover{color: forestgreen}
+ .loggedInUsername{
+     font-size: 3vh;
+ }
+ .deleteMSG{
+     font-size: 3vh;
+ }
+.delete{
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 1.5vh!important;
+    font-family: "Comic Sans MS";
+    font-size: 2.6vh;
+    margin-bottom: 1vh;
+}.delete:hover{color: red}
+button{
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 1.5vh!important;
+    font-family: "Comic Sans MS";
+    font-size: 3vh;
+}
+button:visited{
+    text-decoration: none;
+}
+button:link{
+    text-decoration: none;
+}
+button:hover{
+    color: forestgreen;
+}
+.form{
+    color: green;
+}
+.deur{
+    color: green;
+}
+.deur2{
+    color: red;
+}
+.restart{
+    color: green;
+}
+.info{
+    border: 1px gray solid;
+    border-radius: 2vh;
+    height: 250px;
+    width: 300px;
+    background-color: grey;
+}
+option{
+    background-color: rgba(0,0,0,.8);
+}
+iframe{
+    margin-top: 1vh;
+}
+.noodDicht{
+    margin-bottom: 1vh;
+}
+.noodOpen{
+    margin-bottom: 1vh;
+}
+select{
+    background-color: rgba(128,128,128,0.2);
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+}
+.tijdBegin{
+    width: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(128,128,128,.2);
+}
+.dropdown-menu{
+    background-color: #2b2b2b!important;
+}
+.nav-link{
+    padding: 2vh!important;
+}
+.btn-secondary{
+    background: none!important;
+    outline: none!important;
+    border: none;
+}.btn-secondary:hover{
+     text-decoration: none!important;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.tijdEinde{
+    width: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(128,128,128,.2);
+}
+.ingelogd{
+    margin-top: 3vh!important;
+    float: left;
+    border: 2px black solid;
+    border-radius: 5px;
+    padding: 2vh;
+    background-color: rgba(128,128,128,.2);
+}
+.formLogin{
+    float: left;
+    border: 2px black solid;
+    border-radius: 5px;
+    padding: 2vh;
+    background-color: rgba(128,128,128,.2);
+}
+.username{
+    width: 90px;
+    margin-left: 51px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(128,128,128,.2);
+}.login{
+    margin-top: 5px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 1.5vh;
+    font-family: "Comic Sans MS";
+    font-size: 20px;
+}.login:hover{
+     color: forestgreen;
+     font-size: 3.3vh;
+ }
+.checkmark {
+       position: absolute;
+       top: 3px;
+       left: 90px;
+       height: 20px;
+       width: 20px;
+       background-color: darkgray;
+       border-radius: 5px;
+   }.show:hover input ~ .checkmark {
+        background-color: gray;
+    }.show input:checked ~ .checkmark {
+         background-color: #2196F3;
+     }.checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+      }.show input:checked ~ .checkmark:after {
+           display: block;
+       }.show .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+.xcubeImg{
+    width: 10%;
+    display: inline-block;
+    position: absolute;
+}
+p{
+    text-shadow: 2px 2px black;
+}
+body::after{
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: url("https://www.x-cube.nl/wp-content/uploads/2019/11/photo_bigscreen1_1920.jpg");
+    background-size: cover;
+    position: fixed;
+}
+.btn{
+    background-color: rgba(128,128,128,.4);
+    border: 1px white solid!important;
+    color: white;
+}
+.logo2{
+    width: 25%;
+    border-radius: 5vh;
+}
+::-webkit-input-placeholder{
+    color: rgba(255,255,255,.8)!important;
+}
+input[type=text]{
+    background-color: rgba(128,128,128,.2);
+}
+input[type=email]{
+    background-color: rgba(128,128,128,.2);
+}
+input[type=password]{
+    background-color: rgba(128,128,128,.2);
+}
+input[type=text]:focus{
+    background-color: rgba(128,128,128,.2);
+}input[type=email]:focus{
+     background-color: rgba(128,128,128,.2);
+ }
+input[type=password]:focus{
+    background-color: rgba(128,128,128,.2);
+}
+.form {
+    font-weight: 700;
+    margin-top: 10vh;
+    width: 80% !important;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 2vh;
+    padding: 2vh;
+}
+.form-control{
+    width: 70%!important;
+    color: white!important;
+}
+.navbar-brand img{
+    height: 80px;
+}
+.logo{
+    border-radius: 2vh;
+}

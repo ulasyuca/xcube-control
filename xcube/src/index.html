@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale = 1">
+    <link rel="stylesheet" type="text/css" href="xcube.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>XCUBE</title>
+</head>
+<body>
+    <center>
+    <div class="form" id="form">
+            <img class="logo2" src="https://www.x-cube.nl/wp-content/uploads/2019/11/xcube_4kant-e1574099916511.png" alt="XCUBE Logo">
+    <div class="text-light"><h2>Login</h2></div>
+    <strong><p class="" id="error"></p></strong>
+    <form action="#">
+        <div class="form-group">
+            <label class="text-light" for="naam">Naam:</label>
+            <input type="text" class="form-control" id="naam" placeholder="Naam">
+        </div>
+        <div class="form-group">
+            <label class="text-light" for="wachtwoord">Wachtwoord:</label>
+            <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord">
+        </div>
+        <div class="checkbox">
+
+        </div>
+        <button type="submit" class="btn btn-default" onclick="login()">Login</button>
+    </form>
+        </div>
+    </center>
+<script>
+    window.onload = function () {
+        window.location.replace('index.html?#');
+        sessionStorage.clear();
+    };
+    function login() {
+        const naam = document.getElementById("naam").value;
+        const wachtwoord = document.getElementById("wachtwoord").value;
+        const name = naam+':'+wachtwoord;
+        const b64 = btoa(name);
+        //checken of de ingevoerde naam en wachtwoord kloppen.
+        if (b64 === "YWRtaW46V2Vsa29tMjAxOSE="){
+                sessionStorage["naam"] = document.getElementById("naam").value;
+                sessionStorage["wachtwoord"] = document.getElementById("wachtwoord").value;
+                window.location.replace('xcube-control.html?#');
+                setTimeout("login()",1000);
+        }else{
+            document.getElementById("error").innerHTML = "De ingevoerde gegevens kloppen niet!";
+            document.getElementById("error").style.color = "red";
+            document.getElementById("naam").style.border = "2px solid red";
+            document.getElementById("wachtwoord").style.border = "2px solid red";
+        }
+    }
+</script>
+</body>
+</html>

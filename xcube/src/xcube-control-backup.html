@@ -168,8 +168,7 @@
     const array2 = [];
     
     let userUuid;
-    let count = 0;
-    let count2 = 1;
+    let count;
     let status = '';
     let password = 'Welkom2019!'//sessionStorage["wachtwoord"];
     let username = 'admin'//sessionStorage["naam"];
@@ -180,10 +179,6 @@
     let response3;
     let response4;
     let checkDoorLock;
-
-    var url = 'https://192.168.33.10/api/log/subscribe?filter=SwitchStateChanged,OutputChanged';
-    var id;
-    var url2;
 
     document.getElementById("loggedInUsername").innerHTML = username;
     window.onload = function () {
@@ -207,18 +202,14 @@
                     checkDoorOpenColor3.style.color = 'red';
                 }
                 if (response == 'true'){
-                    //if (count2 == 1)getUrlLog();
-                    count = 1;
                     lock1.className = "fa fa-unlock";
                     checkDoorOpenColor.style.color = 'green';
-                }else{
-                    count2 = 1;
-                    getLog();
+                }else {
                     checkDoorOpenColor.style.color = "red"; 
                     lock1.className = "fa fa-lock";
                 }
-                
             };
+
             xhr2.onload = () => {
                 const data2 = JSON.parse(xhr2.responseText);
                 response2 = JSON.stringify(data2.result.switches[1].active);
@@ -240,21 +231,21 @@
             xhr2.send();
 
         }, 100);
-
-
-        function getLog(){
-            if (count == 1){
-                count = 0;
-                const xhr4 = new XMLHttpRequest();
-                xhr4.onload = () => {
-                    const data4 = JSON.parse(xhr4.responseText);
-                    console.log(data4);
-                }
-                xhr4.open("GET", url2);
-                xhr4.setRequestHeader('Authorization', 'Basic '+b64);
-                xhr4.send();
+        document.getElementById('getLog').onclick = function(){
+            const url = 'https://192.168.33.10/api/log/subscribe?filter=SwitchStateChanged,OutputChanged';
+            const url2 = "https://192.168.33.10/api/log/pull?id=470520425"; 
+            const xhr3 = new XMLHttpRequest();
+            xhr3.onload = () => {
+                const data3 = JSON.parse(xhr3.responseText);
+                console.log(data3);
             }
+            xhr3.open("GET", url2);
+            xhr3.setRequestHeader('Authorization', 'Basic '+b64);
+            xhr3.send();
         }
+        // if (sessionStorage.length === 0) {
+                //     window.location.replace('index.html?#');
+                // }
         };
         function focusInput() {
             document.getElementById("input_value").focus();
@@ -299,15 +290,25 @@
             sessionStorage.clear();
             window.location.replace('index.html?#');
         }
-        function tijdBeginHkeydown(){document.getElementById("tijdBeginH").style.border = "";}
-        function tijdEindeHkeydown(){document.getElementById("tijdEindeH").style.border = "";}
-        function tijdBeginMkeydown(){document.getElementById("tijdBeginM").style.border = "";}
-        function tijdEindeMkeydown(){document.getElementById("tijdEindeM").style.border = "";}
-        function maandklik(){document.getElementById("maand").style.border = "";}
-        function dagklik(){document.getElementById("dag").style.border = "";}
-        function jaarklik(){document.getElementById("jaar").style.border = "";}
-        function naamkeydown(){document.getElementById("naam").style.border = "";}
-        function emailkeydown(){document.getElementById("email").style.border = "";}
+        function tijdBeginHkeydown() {
+            document.getElementById("tijdBeginH").style.border = "";
+        }function tijdEindeHkeydown() {
+            document.getElementById("tijdEindeH").style.border = "";
+        }function tijdBeginMkeydown() {
+            document.getElementById("tijdBeginM").style.border = "";
+        }function tijdEindeMkeydown() {
+            document.getElementById("tijdEindeM").style.border = "";
+        }function maandklik() {
+            document.getElementById("maand").style.border = "";
+        }function dagklik() {
+            document.getElementById("dag").style.border = "";
+        }function jaarklik() {
+            document.getElementById("jaar").style.border = "";
+        }function naamkeydown() {
+            document.getElementById("naam").style.border = "";
+        }function emailkeydown() {
+            document.getElementById("email").style.border = "";
+        }
         function create() {
             //user toevoegen.
             const tijdBeginH = document.getElementById("tijdBeginH").value;
@@ -636,27 +637,12 @@
         }
         function openDoor() {
             //deur openen voor 3 seconden
-            getUrlLog();
             if (response == 'false'){
-                    const url = "https://192.168.33.10/api/switch/ctrl?switch=1&action=trigger";
-                    const xhr = new XMLHttpRequest();
-                    xhr.open("GET", url);
-                    xhr.setRequestHeader('Authorization', 'Basic '+b64);
-                    xhr.send();
-            }
-        }
-        function getUrlLog(){
-            if (count2 == 1){
-                count2 = 0;
-                const xhr3 = new XMLHttpRequest();
-                xhr3.onload = () => {
-                    const data3 = JSON.parse(xhr3.response);
-                    id = JSON.stringify(data3.result.id);
-                    url2 = "https://192.168.33.10/api/log/pull?id="+id;
-                }
-                xhr3.open("GET", url);
-                xhr3.setRequestHeader('Authorization', 'Basic '+b64);
-                xhr3.send();
+                const url = "https://192.168.33.10/api/switch/ctrl?switch=1&action=trigger";
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", url);
+                xhr.setRequestHeader('Authorization', 'Basic '+b64);
+                xhr.send();
             }
         }
         function deviceRestart() {

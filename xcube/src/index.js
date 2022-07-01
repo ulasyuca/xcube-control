@@ -29,8 +29,9 @@ const createWindow = () => {
     height: 600,
     autoHideMenuBar: true,
     webPreferences: {
-      contextIsolation: true,
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false,
+      webSecurity: false
     }
   });
 
